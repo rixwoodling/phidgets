@@ -146,7 +146,7 @@ python3 -m pip install phidget22
 
 Linux also needs the Phidget22 native library and udev rules so the device can be accessed without `sudo`.
 
-## Hardware
+### Hardware
 ```text
 USB
 └── HUB0002 6-Port USB VINT Hub
