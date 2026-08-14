@@ -156,6 +156,16 @@ USB
             ├── TemperatureSensor channel 4 (internal)
             └── VoltageInput channels 0-3
 ```
+```
+┌─────────┐    ┌──────────┐    ┌──────────┐
+│   USB   │───▶│  HUB0002 │───▶│  TMP1101 │
+└─────────┘    └──────────┘    └────┬─────┘
+                                    │
+                                    ▼
+┌──────────────────┐    ┌───────────────────┐
+│   Voltage CH 0–3 │◀───│ Temperature CH 0–4│
+└──────────────────┘    └───────────────────┘
+```
 
 ### Notes
 - External probe: **Type K**.
