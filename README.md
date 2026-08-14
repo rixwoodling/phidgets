@@ -2,17 +2,17 @@
 
 Basic Python utilities for a **Phidgets HUB0002 VINT Hub** with a **TMP1101 4x Thermocouple Phidget**.
 
-## Scripts
-
 #### `install.sh`
 ```
-git clone https://github.com/rixwoodling/phidgets.git
+git clone https://github.com/rixwoodling/phidgets.git # or unzip download
 cd phidgets
 python3 -m venv venv
 source venv/bin/activate
 pip install phidget22
 ./install.sh
 ```
+
+## Hardware Scripts
 
 #### `detect_hub.py`
 Verifies basic communication with a connected Phidgets VINT Hub. The test automatically discovers the hub, connects to VINT port 0, and reports its device information.
@@ -66,6 +66,34 @@ python detect_sensor_matrix.py
 ...
 ```
 
+#### `hardware_tree.py`
+
+Displays the connected Phidgets hardware topology as a tree. Automatically discovers the VINT hub, attached devices, available channels, and channel types.
+```
+python hardware_tree.py
+
+Phidget Hardware
+================
+└── 6-Port USB VINT Hub Phidget
+    ├── SKU: HUB0002
+    └── Serial: 786276
+    └── Port 0
+        └── 4x Thermocouple Phidget (TMP1101)
+            ├── PhidgetTemperatureSensor
+            │   ├── Channel 0
+            │   ├── Channel 1
+            │   ├── Channel 2
+            │   ├── Channel 3
+            │   └── Channel 4
+            └── PhidgetVoltageInput
+                ├── Channel 0
+                ├── Channel 1
+                ├── Channel 2
+                └── Channel 3
+```
+
+## Validation Scripts
+
 #### `tmp1101_monitor0.py`
 
 Reads **Type K thermocouple channel 0** and its corresponding raw voltage input. The TMP1101 and VINT port are discovered automatically.
@@ -110,7 +138,7 @@ Temperature: 26.83 °C
 Temperature: 26.84 °C
 ```
 
-## Requirements
+### Requirements
 
 ```bash
 python3 -m pip install phidget22
@@ -119,7 +147,6 @@ python3 -m pip install phidget22
 Linux also needs the Phidget22 native library and udev rules so the device can be accessed without `sudo`.
 
 ## Hardware
-
 ```text
 USB
 └── HUB0002 6-Port USB VINT Hub
@@ -130,8 +157,7 @@ USB
             └── VoltageInput channels 0-3
 ```
 
-## Notes
-
+### Notes
 - External probe: **Type K**.
 - Thermocouple polarity matters. Reversed wires invert the temperature response.
 - A thermocouple directly exposed to a heater can read much hotter than the surrounding air because the junction absorbs radiant heat.
