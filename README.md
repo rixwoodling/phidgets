@@ -48,7 +48,7 @@ ATTACHED
 ```
 It also reports generic hub port modes. These are **port capabilities**, not necessarily physical devices.
 
-### `detect_sensor_matrix.py`
+#### `detect_sensor_matrix.py`
 
 Renders the Phidget Manager results as a matrix while retaining device, SKU, serial, port, channel, and channel-class information.
 ```text
