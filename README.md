@@ -31,6 +31,7 @@ Channel: 0
 #### `detect_sensor.py`
 
 Scans attached Phidget channels and reports device information discovered by Phidget22.
+It also reports generic hub port modes. These are **port capabilities**, not necessarily physical devices.
 
 ```text
 Scanning for Phidgets...
@@ -46,7 +47,6 @@ ATTACHED
   Channel class:PhidgetTemperatureSensor
 ...
 ```
-It also reports generic hub port modes. These are **port capabilities**, not necessarily physical devices.
 
 #### `detect_sensor_matrix.py`
 
