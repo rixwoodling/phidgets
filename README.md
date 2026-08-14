@@ -17,7 +17,7 @@ pip install phidget22
 #### `detect_hub.py`
 Verifies basic communication with a connected Phidgets VINT Hub. The test automatically discovers the hub, connects to VINT port 0, and reports its device information.
 ```
-python hub_test.py
+python detect_hub.py
 
 Attached!
 Device: Hub Port - Digital Input Mode
@@ -44,6 +44,7 @@ ATTACHED
   Hub port:     0
   Channel:      0
   Channel class:PhidgetTemperatureSensor
+...
 ```
 
 It also reports generic hub port modes. These are **port capabilities**, not necessarily physical devices.
@@ -53,17 +54,21 @@ It also reports generic hub port modes. These are **port capabilities**, not nec
 Renders the Phidget Manager results as a matrix while retaining device, SKU, serial, port, channel, and channel-class information.
 
 ```text
-Phidget Detection Matrix
+python detect_sensor_matrix.py
 
-┌──────┬──────────────────────┬──────────────┬─────────┬────────────────────┐
-│ Port │ Device               │ Device Class │ SKU     │ Channel Class      │
-├──────┼──────────────────────┼──────────────┼─────────┼────────────────────┤
-│ 0    │ 4x Thermocouple      │ PhidgetVINT  │ TMP1101 │ PhidgetTemperature │
-│ 1    │ Hub Port - Digital   │ PhidgetVINT  │ ...     │ PhidgetDigitalInput│
-└──────┴──────────────────────┴──────────────┴─────────┴────────────────────┘
+┌──────┬────────────────────────────────┬──────────────┬───────────┬────────────────────────┬────────┬─────────┬──────────────────────────┐
+│ Port │ Device                         │ Device Class │ Device ID │ SKU                    │ Serial │ Channel │ Channel Class            │
+├──────┼────────────────────────────────┼──────────────┼───────────┼────────────────────────┼────────┼─────────┼──────────────────────────┤
+│ 0    │ 6-Port USB VINT Hub Phidget    │ PhidgetHub   │ 147       │ HUB0002                │ 786276 │ 0       │ PhidgetHub               │
+├──────┼────────────────────────────────┼──────────────┼───────────┼────────────────────────┼────────┼─────────┼──────────────────────────┤
+│ 0    │ 4x Thermocouple Phidget        │ PhidgetVINT  │ 89        │ TMP1101                │ 786276 │ 0       │ PhidgetTemperatureSensor │
+├──────┼────────────────────────────────┼──────────────┼───────────┼────────────────────────┼────────┼─────────┼──────────────────────────┤
+│ 0    │ 4x Thermocouple Phidget        │ PhidgetVINT  │ 89        │ TMP1101                │ 786276 │ 1       │ PhidgetTemperatureSensor │
+├──────┼────────────────────────────────┼──────────────┼───────────┼────────────────────────┼────────┼─────────┼──────────────────────────┤
+...
 ```
 
-### `tmp1101_monitor.py`
+### `tmp1101_monitor0.py`
 
 Reads **Type K thermocouple channel 0** and its corresponding raw voltage input. The TMP1101 and VINT port are discovered automatically.
 
