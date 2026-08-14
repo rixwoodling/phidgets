@@ -2,7 +2,8 @@
 
 Basic Python utilities for a **Phidgets HUB0002 VINT Hub** with a **TMP1101 4x Thermocouple Phidget**.
 
-### Installation (Linux x86_64)
+## Scripts
+### `install.sh`
 ```
 git clone https://github.com/rixwoodling/phidgets.git
 cd phidgets
@@ -11,8 +12,6 @@ source venv/bin/activate
 pip install phidget22
 ./install.sh
 ```
-
-## Scripts
 
 #### `detect_hub.py`
 Verifies basic communication with a connected Phidgets VINT Hub. The test automatically discovers the hub, connects to VINT port 0, and reports its device information.
