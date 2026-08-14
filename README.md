@@ -14,7 +14,7 @@ pip install phidget22
 
 ## Scripts
 
-#### detect_hub.py
+#### `detect_hub.py`
 Verifies basic communication with a connected Phidgets VINT Hub. The test automatically discovers the hub, connects to VINT port 0, and reports its device information.
 ```
 python hub_test.py
