@@ -66,11 +66,12 @@ python detect_sensor_matrix.py
 ...
 ```
 
-### `tmp1101_monitor0.py`
+#### `tmp1101_monitor0.py`
 
 Reads **Type K thermocouple channel 0** and its corresponding raw voltage input. The TMP1101 and VINT port are discovered automatically.
 ```text
-python tmp1101_monitor.py
+python tmp1101_monitor0.py
+
 TMP1101 detected
   Serial: 786276
   VINT port: 0
@@ -89,12 +90,12 @@ Temperature       Raw voltage
    29.87 °C       0.000322 V
 ```
 
-### `ambient_temp.py`
+#### `ambient_temp.py`
 
 Reads the TMP1101's **internal temperature sensor (channel 4)**. This measures the TMP1101 itself, not the external thermocouple.
-
 ```text
 python ambient_temp.py
+
 Ambient temperature sensor attached!
 Device:   4x Thermocouple Phidget
 SKU:      TMP1101
