@@ -2,6 +2,16 @@
 
 Basic Python utilities for a **Phidgets HUB0002 VINT Hub** with a **TMP1101 4x Thermocouple Phidget**.
 
+### Installation (Linux x86_64)
+```
+git clone https://github.com/rixwoodling/phidgets.git
+cd phidgets
+python3 -m venv venv
+source venv/bin/activate
+pip install phidget22
+./install.sh
+```
+
 ## Scripts
 
 ### `detect_sensor.py`
