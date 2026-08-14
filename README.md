@@ -14,7 +14,21 @@ pip install phidget22
 
 ## Scripts
 
-### `detect_sensor.py`
+#### detect_hub.py
+Verifies basic communication with a connected Phidgets VINT Hub. The test automatically discovers the hub, connects to VINT port 0, and reports its device information.
+```
+python hub_test.py
+
+Attached!
+Device: Hub Port - Digital Input Mode
+Device class: PhidgetVINT
+SKU: DIGITALINPUT_PORT
+Serial: 786276
+Hub port: 0
+Channel: 0
+```
+
+#### `detect_sensor.py`
 
 Scans attached Phidget channels and reports device information discovered by Phidget22.
 
