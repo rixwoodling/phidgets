@@ -3,7 +3,8 @@
 Basic Python utilities for a **Phidgets HUB0002 VINT Hub** with a **TMP1101 4x Thermocouple Phidget**.
 
 ## Scripts
-### `install.sh`
+
+#### `install.sh`
 ```
 git clone https://github.com/rixwoodling/phidgets.git
 cd phidgets
