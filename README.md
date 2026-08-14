@@ -14,6 +14,7 @@ pip install phidget22
 ./install.sh
 ```
 
+---
 #### `detect_hub.py`
 Verifies basic communication with a connected Phidgets VINT Hub. The test automatically discovers the hub, connects to VINT port 0, and reports its device information.
 ```
@@ -28,6 +29,7 @@ Hub port: 0
 Channel: 0
 ```
 
+---
 #### `detect_sensor.py`
 
 Scans attached Phidget channels and reports device information discovered by Phidget22.
@@ -46,9 +48,9 @@ ATTACHED
   Channel class:PhidgetTemperatureSensor
 ...
 ```
-
 It also reports generic hub port modes. These are **port capabilities**, not necessarily physical devices.
 
+---
 ### `detect_sensor_matrix.py`
 
 Renders the Phidget Manager results as a matrix while retaining device, SKU, serial, port, channel, and channel-class information.
